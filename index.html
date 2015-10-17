@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html ng-app="dndApp">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Unofficial D&amp;D 5th Edition Character Builder</title>
+	<link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	
+</head>
+<div class="container">
+<body>
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<h3 class="navbar-text">D&amp;D 5e Character Builder</h3>
+			<span class="navbar-right">
+	  		<button type="button" class="btn btn-default navbar-btn">Sign in</button>
+	  		<button type="button" class="btn btn-default navbar-btn">Sign up</button>
+	  		<button type="button" class="btn btn-default navbar-btn">Save</button>
+	  		<button type="button" class="btn btn-default navbar-btn">Print</button>
+	  		</span>
+		</div>
+	</nav>
+
+	<h1>Build a Character!</h1>
+
+	<div class="container-fluid" id="sheet1">
+		<div class="row">
+			<div class="col-md-3 sheetBox">
+				<p>Character Name</p>
+			</div>
+			<div class="col-md-3 sheetBox">
+				<div class="row">
+					<div class="col-md-12 sheetBox">
+						<p>Class &amp; Level</p>
+					</div>
+					<div class="col-md-12 sheetBox">
+						<p>Race</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 sheetBox">
+				<div class="row">
+					<div class="col-md-12 sheetBox">
+						<p>Background</p>
+					</div>
+					<div class="col-md-12 sheetBox">
+						<p>Alignment</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 sheetBox">
+				<div class="row">
+					<div class="col-md-12 sheetBox">
+						<p>Player Name</p>
+					</div>
+					<div class="col-md-12 sheetBox">
+						<p>Experience Points</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 sheetBox">
+				<div class="row">
+					<div class="col-md-12 sheetBox">
+						<p>Proficiency Bonus:</p>
+					</div>
+					<div class="col-md-12 sheetBox">
+						<p>Inspiration:</p>
+					</div>
+					<div class="col-md-4 sheetBox">
+						<p>Strength:</p>
+						<p>Strength Bonus:</p>
+					</div>
+					<div class="col-md-8 sheetBox">
+						<p>Saving Throws</p>
+						<p>Athletics</p>
+						<p>.</p>
+						<p>.</p>
+						<p>.</p>
+						<p>.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 sheetBox">
+						<p>Dexterity:</p>
+						<p>Dexterity Bonus:</p>
+					</div>
+					<div class="col-md-8 sheetBox">
+						<p>Saving Throws</p>
+						<p>Acrobatics</p>
+						<p>Sleight of Hand</p>
+						<p>Stealth</p>
+						<p>.</p>
+						<p>.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 sheetBox">
+						<p>Constitution:</p>
+						<p>Constitution Bonus:</p>
+					</div>
+					<div class="col-md-8 sheetBox">
+						<p>Saving Throws</p>
+						<p>.</p>
+						<p>.</p>
+						<p>.</p>
+						<p>.</p>
+						<p>.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 sheetBox">
+						<p>Inteligence:</p>
+						<p>Inteligence Bonus:</p>
+					</div>
+					<div class="col-md-8 sheetBox">
+						<p>Saving Throws</p>
+						<p>Arcana</p>
+						<p>History</p>
+						<p>Investigation</p>
+						<p>Nature</p>
+						<p>Religion</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 sheetBox">
+						<p>Wisdom:</p>
+						<p>Wisdom Bonus:</p>
+						</div>
+					<div class="col-md-8 sheetBox">
+						<p>Saving Throws</p>
+						<p>Animal Handling</p>
+						<p>Insight</p>
+						<p>Medicine</p>
+						<p>Perception</p>
+						<p>Survival</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 sheetBox">
+						<p>Charisma:</p>
+						<p>Charisma Bonus:</p>
+					</div>
+					<div class="col-md-8 sheetBox">
+						<p>Saving Throws</p>
+						<p>Animal Handling</p>
+						<p>Insight</p>
+						<p>Medicine</p>
+						<p>Perception</p>
+						<p>.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 sheetBox">
+				<div class="row">
+					<div class="col-md-4 sheetBox">
+						<p>Armor Class</p>
+					</div>
+					<div class="col-md-4 sheetBox">
+						<p>Initiative</p>
+					</div>
+					<div class="col-md-4 sheetBox">
+						<p>Speed</p>
+					</div>
+					<div class="col-md-12 sheetBox">
+						<p>Hit Point Maximum</p>
+						<p>Current Hit Points</p>
+					</div>
+					<div class="col-md-12 sheetBox">
+						<p>Temporary Hit Points</p>
+					</div>
+					<div class="col-md-6 sheetBox">
+						<p>Hit Dice</p>
+					</div>
+					<div class="col-md-6 sheetBox">
+						<p>Successes</p>
+						<p>Failures</p>
+						<p>Death Saves</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 sheetBox">
+				<div class="row">
+					<div class="col-md-12 sheetBox">
+						<p>Personality Traits</p>
+					</div>
+					<div class="col-md-12 sheetBox">
+						<p>Ideals</p>
+					</div>
+					<div class="col-md-12 sheetBox">
+						<p>Bonds</p>
+					</div>
+					<div class="col-md-12 sheetBox">
+						<p>Flaws</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 sheetBox">
+				<div class="row">
+					<div class="col-md-4 sheetBox">
+						<p>Name</p>
+					</div>
+					<div class="col-md-4 sheetBox">
+						<p>ATK Bonus</p>
+					</div>
+					<div class="col-md-4 sheetBox">
+						<p>Damage/Type</p>
+					</div>
+					<div class="col-md-4 sheetBox">
+						<p>Name</p>
+					</div>
+					<div class="col-md-4 sheetBox">
+						<p>ATK Bonus</p>
+					</div>
+					<div class="col-md-4 sheetBox">
+						<p>Damage/Type</p>
+					</div>
+					<div class="col-md-4 sheetBox">
+						<p>Name</p>
+					</div>
+					<div class="col-md-4 sheetBox">
+						<p>ATK Bonus</p>
+					</div>
+					<div class="col-md-4 sheetBox">
+						<p>Damage/Type</p>
+					</div>
+					<div class="col-md-12 sheetBox">
+						<p>Attacks &amp; Spellcasting</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 sheetBox">
+				<p>Features &amp; Traits</p>
+			</div>
+			<div class="col-md-4 sheetBox">
+				<p>Other Proficiencies &amp; Traits</p>
+			</div>
+			<div class="col-md-8 sheetBox">
+				<p>Equipment &amp; Character Notes</p>
+			</div>
+		</div>
+	</div>
+</body>
+</div>
+</html>
