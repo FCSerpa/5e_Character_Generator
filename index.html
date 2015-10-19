@@ -10,8 +10,8 @@
 	<script type="text/javascript" src="app.js"></script>
 	
 </head>
+<body ng-controller="CharacterCtrl">
 <div class="container">
-<body>
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<h3 class="navbar-text">D&amp;D 5e Character Builder</h3>
@@ -24,29 +24,45 @@
 		</div>
 	</nav>
 
-	<h1>Build a Character!</h1>
+	<h1>Build a Character!  {{character.name}} </h1>
 
 	<div class="container-fluid" id="sheet1">
 		<div class="row">
 			<div class="col-md-3 sheetBox">
+				<input type="text" name="characterName" ng-model="character.name"/>
 				<p>Character Name</p>
 			</div>
 			<div class="col-md-3 sheetBox">
 				<div class="row">
 					<div class="col-md-12 sheetBox">
+						<select name="characterClass select" ng-model="character.characterClass">
+							<option value="fighter">Fighter</option>
+						</select>
+						<select name="level select" ng-model="character.level">
+							<option value="1">1</option>
+						</select>
 						<p>Class &amp; Level</p>
 					</div>
 					<div class="col-md-12 sheetBox">
-						<p>Race</p>
+						<select name="race select" ng-model="character.race"/>
+							<option value="mountainDwarf">Mountain Dwarf</option>
+						</select>
+						<p>Race:</p>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-3 sheetBox">
 				<div class="row">
 					<div class="col-md-12 sheetBox">
+						<select name="background select" ng-model="character.background">
+							<option value="soldier">Soldier</option>
+						</select>
 						<p>Background</p>
 					</div>
 					<div class="col-md-12 sheetBox">
+						<select name="alignment select" ng-model="character.alignment">
+							<option value="lawfulGood">Lawful Good</option>
+						<select>
 						<p>Alignment</p>
 					</div>
 				</div>
@@ -54,9 +70,11 @@
 			<div class="col-md-3 sheetBox">
 				<div class="row">
 					<div class="col-md-12 sheetBox">
+						(username goes here)
 						<p>Player Name</p>
 					</div>
 					<div class="col-md-12 sheetBox">
+						{{character.xp}}
 						<p>Experience Points</p>
 					</div>
 				</div>
@@ -64,6 +82,7 @@
 			<div class="col-md-4 sheetBox">
 				<div class="row">
 					<div class="col-md-12 sheetBox">
+						{{if (character.level === 1) +2 }}
 						<p>Proficiency Bonus:</p>
 					</div>
 					<div class="col-md-12 sheetBox">
@@ -76,10 +95,10 @@
 					<div class="col-md-8 sheetBox">
 						<p>Saving Throws</p>
 						<p>Athletics</p>
-						<p>.</p>
-						<p>.</p>
-						<p>.</p>
-						<p>.</p>
+						<p>&nbsp;</p>
+						<p>&nbsp;</p>
+						<p>&nbsp;</p>
+						<p>&nbsp;</p>
 					</div>
 				</div>
 				<div class="row">
@@ -92,8 +111,8 @@
 						<p>Acrobatics</p>
 						<p>Sleight of Hand</p>
 						<p>Stealth</p>
-						<p>.</p>
-						<p>.</p>
+						<p>&nbsp;</p>
+						<p>&nbsp;</p>
 					</div>
 				</div>
 				<div class="row">
@@ -103,11 +122,11 @@
 					</div>
 					<div class="col-md-8 sheetBox">
 						<p>Saving Throws</p>
-						<p>.</p>
-						<p>.</p>
-						<p>.</p>
-						<p>.</p>
-						<p>.</p>
+						<p>&nbsp;</p>
+						<p>&nbsp;</p>
+						<p>&nbsp;</p>
+						<p>&nbsp;</p>
+						<p>&nbsp;</p>
 					</div>
 				</div>
 				<div class="row">
@@ -149,7 +168,7 @@
 						<p>Insight</p>
 						<p>Medicine</p>
 						<p>Perception</p>
-						<p>.</p>
+						<p>&nbsp;</p>
 					</div>
 				</div>
 			</div>
@@ -184,16 +203,36 @@
 			<div class="col-md-4 sheetBox">
 				<div class="row">
 					<div class="col-md-12 sheetBox">
-						<p>Personality Traits</p>
+						<select name="trait select" ng-model="character.trait">
+							<option value="I face problems head-on. A simple, direct solution is the best path to success.">Direct</option>
+						</select>
+						<br>
+						<p>{{character.trait}}</p>
+						<p>Personality Trait</p>
 					</div>
 					<div class="col-md-12 sheetBox">
-						<p>Ideals</p>
+						<select name="ideal select" ng-model="character.ideal">
+							<option value="Greater Good. Our lot is to lay down our lives in defense of others.">Greater Good</option>
+						</select>
+						<br>
+						<p>{{character.ideal}}
+						<p>Ideal</p>
 					</div>
 					<div class="col-md-12 sheetBox">
-						<p>Bonds</p>
+						<select name="bond select" ng-model="character.bond">
+							<option value="I fight for those who cannot fight for themselves.">Defender</option>
+						</select>
+						<br>
+						<p>{{character.bond}}</p>
+						<p>Bond</p>
 					</div>
 					<div class="col-md-12 sheetBox">
-						<p>Flaws</p>
+						<select name="flaw select" ng-model="character.flaw">
+							<option value="I’d rather eat my armor than admit when I’m wrong.">Proud</option>
+						</select>
+						<br>
+						<p>{{character.flaw}}</p>
+						<p>Flaw</p>
 					</div>
 				</div>
 			</div>
@@ -242,6 +281,6 @@
 			</div>
 		</div>
 	</div>
-</body>
 </div>
+</body>
 </html>
