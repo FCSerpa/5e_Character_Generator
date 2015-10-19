@@ -4,9 +4,11 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Unofficial D&amp;D 5th Edition Character Builder</title>
-	<link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="app.js"></script>
 	
 </head>
@@ -82,14 +84,14 @@
 			<div class="col-md-4 sheetBox">
 				<div class="row">
 					<div class="col-md-12 sheetBox">
-						{{if (character.level === 1) +2 }}
+						<h2>{{if (character.level === 1) +2 }}</h2>
 						<p>Proficiency Bonus:</p>
 					</div>
 					<div class="col-md-12 sheetBox">
 						<p>Inspiration:</p>
 					</div>
 					<div class="col-md-4 sheetBox">
-						<h1>{{character.str}}</h1>
+						<input type="number" name="character str" ng-model="character.str" placeholder="{{character.str}}"/>
 						<p>Strength</p>
 						<h3>{{ Math.floor((character.str - 10)/2) }}</h3>
 						<p>Strength Bonus</p>
@@ -105,10 +107,10 @@
 				</div>
 				<div class="row">
 					<div class="col-md-4 sheetBox">
-						<h1>{{character.dex}}</h1>
+						<input type="number" name="character dex" ng-model="character.dex" placeholder="{{character.dex}}"/>
 						<p>Dexterity</p>
 						<h3>{{ Math.floor((character.dex - 10)/2) }}</h3>
-						<p>Dexterity Bonus:</p>
+						<p>Dexterity Bonus</p>
 					</div>
 					<div class="col-md-8 sheetBox">
 						<p>Saving Throws</p>
@@ -121,10 +123,10 @@
 				</div>
 				<div class="row">
 					<div class="col-md-4 sheetBox">
-						<h1>{{character.con}}</h1>
+						<input type="number" name="character con" ng-model="character.con" placeholder="{{character.con}}"/>
 						<p>Constitution</p>
 						<h3>{{ Math.floor((character.con - 10)/2) }}</h3>
-						<p>Constitution Bonus:</p>
+						<p>Constitution Bonus</p>
 					</div>
 					<div class="col-md-8 sheetBox">
 						<p>Saving Throws</p>
@@ -137,10 +139,10 @@
 				</div>
 				<div class="row">
 					<div class="col-md-4 sheetBox">
-						<h1>{{character.intel}}</h1>
+						<input type="number" name="character intel" ng-model="character.intel" placeholder="{{character.intel}}"/>
 						<p>Inteligence</p>
 						<h3>{{ Math.floor((character.intel - 10)/2) }}</h3>
-						<p>Inteligence Bonus:</p>
+						<p>Inteligence Bonus</p>
 					</div>
 					<div class="col-md-8 sheetBox">
 						<p>Saving Throws</p>
@@ -153,10 +155,10 @@
 				</div>
 				<div class="row">
 					<div class="col-md-4 sheetBox">
-						<h1>{{character.wis}}</h1>
+						<input type="number" name="character wis" ng-model="character.wis" placeholder="{{character.wis}}"/>
 						<p>Wisdom</p>
 						<h3>{{ Math.floor((character.wis - 10)/2) }}</h3>
-						<p>Wisdom Bonus:</p>
+						<p>Wisdom Bonus</p>
 						</div>
 					<div class="col-md-8 sheetBox">
 						<p>Saving Throws</p>
@@ -169,10 +171,10 @@
 				</div>
 				<div class="row">
 					<div class="col-md-4 sheetBox">
-						<h1>{{character.cha}}</h1>
+						<input type="number" name="character cha" ng-model="character.cha" placeholder="{{character.cha}}"/>
 						<p>Charisma</p>
 						<h3>{{ Math.floor((character.cha - 10)/2) }}</h3>
-						<p>Charisma Bonus:</p>
+						<p>Charisma Bonus</p>
 					</div>
 					<div class="col-md-8 sheetBox">
 						<p>Saving Throws</p>
@@ -187,27 +189,34 @@
 			<div class="col-md-4 sheetBox">
 				<div class="row">
 					<div class="col-md-4 sheetBox">
+						<h2>{{ 10 + Math.floor((character.dex - 10)/2) }}</h2>
 						<p>Armor Class</p>
 					</div>
 					<div class="col-md-4 sheetBox">
+						<h2>{{ + Math.floor((character.dex - 10)/2) }}</h2>
 						<p>Initiative</p>
 					</div>
 					<div class="col-md-4 sheetBox">
+						<h2>{{character.race === "mountainDwarf" ? 25 : 30}}</h2>
 						<p>Speed</p>
 					</div>
 					<div class="col-md-12 sheetBox">
+						<h2 ng-if"{{character.characterClass === "fighter"}}">10 + Math.floor((character.con - 10)/2) }}</h2>
 						<p>Hit Point Maximum</p>
+						<h2>&nbsp;</h2>
 						<p>Current Hit Points</p>
 					</div>
 					<div class="col-md-12 sheetBox">
+						<h2>&nbsp;</h2>
 						<p>Temporary Hit Points</p>
 					</div>
 					<div class="col-md-6 sheetBox">
+						<h2>1d10</h2>
 						<p>Hit Dice</p>
 					</div>
 					<div class="col-md-6 sheetBox">
-						<p>Successes</p>
-						<p>Failures</p>
+						<p>○ ○ ○ Successes</p>
+						<p>○ ○ ○ Failures</p>
 						<p>Death Saves</p>
 					</div>
 				</div>

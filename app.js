@@ -16,12 +16,12 @@ app.controller("CharacterCtrl", function($scope){
 		alignment: "",
 		player: "",
 		xp: 0,
-		str: 18,
-		dex: 12,
-		con: 17,
+		str: 8,
+		dex: 8,
+		con: 8,
 		intel: 8,
-		wis: 11,
-		cha: 5,
+		wis: 8,
+		cha: 8,
 		gold: 0,
 		equipment: []
 	}
