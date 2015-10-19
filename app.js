@@ -1,10 +1,7 @@
 app = angular.module('dndApp', []);
 
 app.controller("CharacterCtrl", function($scope){
-	$scope.abilityBonus = function(ability){
-		return Math.ceil((character.ability - 10)/2);
-	}
-
+	$scope.Math = window.Math;
 
 	$scope.character = {
 		name: "",
@@ -19,13 +16,15 @@ app.controller("CharacterCtrl", function($scope){
 		alignment: "",
 		player: "",
 		xp: 0,
-		str: 8,
-		dex: 8,
-		con: 8,
+		str: 18,
+		dex: 12,
+		con: 17,
 		intel: 8,
-		wis: 8,
-		cha: 8,
+		wis: 11,
+		cha: 5,
 		gold: 0,
 		equipment: []
 	}
+
+	// $scope.abilityBonus(ability)
 });
